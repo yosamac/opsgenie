@@ -1,6 +1,3 @@
-import { EPService } from "../adapters";
-import { Pager } from "../service";
-
 export enum Level {
   FIRST = 1,
   SECOND = 2,
@@ -10,7 +7,7 @@ export enum Level {
 export abstract class PolicyLevel {
 
   private static levels: PolicyLevel[] = [];
-  protected targets: Pager[];
+  protected targets:[];
 
   constructor( protected readonly level: Level) {
     PolicyLevel.levels[level] = this;

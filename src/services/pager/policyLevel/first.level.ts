@@ -1,12 +1,12 @@
-import { EPService } from "../adapters";
-import { PolicyLevel, Level } from './policyLevel';
-import { SecondLevel } from './secondLevel';
+import { EPAdapter } from "../pager.adapters";
+import { PolicyLevel, Level } from './abstract.policy.level';
+import { SecondLevel } from './second.level';
 
 export class FirstLevel extends PolicyLevel {
 
-  private escalationPolicy: EPService;
+  private escalationPolicy: EPAdapter;
 
-  constructor(epSvc: EPService) {
+  constructor(epSvc: EPAdapter) {
     super(Level.FIRST);
     this.escalationPolicy = epSvc;
   }
