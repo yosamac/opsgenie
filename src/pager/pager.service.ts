@@ -36,7 +36,7 @@ export class PagerService {
     createPagerService(
         newPager: any
     ): Promise<any> {
-        this.logger.info(`Creating new service for ${newPager.email}`);
+        this.logger.info(`Creating new service for ${newPager.svcId}`);
         return this.daoSvc.create(newPager);
     }
 

@@ -1,0 +1,44 @@
+version: '3.7'
+
+networks:
+  opsgenie-network:
+
+# docker-compose.yml
+# Add this top-level entry
+services:
+  # nginx:
+  #   container_name: nginx
+  #   build: ./nginx
+  #   ports:
+  #       - "80:80"
+  #   depends_on:
+  #     - pager
+  #   networks: 
+  #     - opsgenie-network
+  db:
+    image: mongo
+    container_name: mongodb
+    expose: 
+      - "27017"
+    networks:
+      - opsgenie-network
+    
+  # pager:
+  #   image:  pager:1.0.0 
+  #   container_name: pager
+  #   build: 
+  #     context: ./
+  #     dockerfile: ./Dockerfile
+  #   expose: 
+  #     - "4000"
+  #   networks:
+  #     - opsgenie-network
+  #   environment:
+  #     - MONGODB_URI=mongodb://db:27017/opsgenie_pager
+  #     - LOG_LEVEL=INFO
+  #     - LOGGIN_LEVEL=INFO
+  #     - EP_MESH_HOST=ep
+  #     - EP_MESH_PORT=4001
+  #   depends_on:
+  #     - db
+  

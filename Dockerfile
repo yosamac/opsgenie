@@ -40,6 +40,7 @@ COPY --from=build /opsgenie/prod_node_modules ./node_modules
 COPY --from=build /opsgenie/dist .
 
 EXPOSE 3000
+EXPOSE 4000
 
 # Log debugging variables
 ENV LOG_LEVEL DEBUG

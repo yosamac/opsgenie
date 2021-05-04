@@ -8,7 +8,7 @@ export default () => ({
     level: process.env.LOG_LEVEL || process.env.LOGGING_LEVEL || 'INFO'
   },
   database: {
-    uri: process.env.MONGODB_URI || 'mongodb://localhost/alert_pager'
+    uri: process.env.MONGODB_URI || 'mongodb://localhost/opsgenie_pager'
   },
   mesh: {
     ep: {

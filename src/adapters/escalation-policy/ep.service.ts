@@ -3,7 +3,6 @@ import { ClientProxy } from '@nestjs/microservices';
 
 import { EP_SVC_CLIENT } from './ep.constant';
 import { PolicyLevel } from './policyLevel/abstract.policy.level';
-import { EP } from './ep.type';
 import { ep } from '../../../test/mock/constants';
 
 @Injectable()
