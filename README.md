@@ -8,10 +8,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-| Framework | Version  |
-| ----------| -------- |
-| Node      | 14.XX.XX |
-| NPM       | 6.XX.XX  |
+| Framework | Version    |
+| ----------| -----------|
+| Node      | 14.XX.XX   |
+| NPM       | 6.XX.XX    |
+| Docker    | >=19.XX.XX |
 
 ### Download and install dependencies
 
@@ -24,7 +25,8 @@ $ npm install
 ### Usage
 
 ```shell
-npm start start:dev
+$ docker-compose up 
+$ npm start start:dev
 ```
 
 ## API v1 info
@@ -59,13 +61,13 @@ Go to the the API to simulate event launching, can be used with the path:
 ### Unit tests
 
 ```shell
-npm run test:unit
+$ npm run test:unit
 ```
 
 ### Integration tests
 
 ```shell
-npm run test
+$ npm run test
 ```
 
 ## Built With
@@ -81,15 +83,15 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ### Generate development Docker image
 ```shell
-npm run build:dev-image
+$ npm run build:dev-image
 ```
 ### Generate production Docker image
 ```shell
-npm run build:pro-image
+$ npm run build:pro-image
 ```
 ### Docker compose
 ```shell
-docker-compose up opsgenie
+$ docker-compose up
 ```
 
 ## Roadmap
