@@ -5,7 +5,7 @@ export const ep = [
     svcId: validSvcId,
     policyLevels:[
       { level: 1,
-        targets: [ 
+        targets: [
           {
             type: 'EMAIL_TARGET',
             email:'yosnier@gmail.con'
@@ -25,7 +25,7 @@ export const ep = [
         notified: false
       },
       { level: 2,
-        targets: [ 
+        targets: [
           {
             type: 'EMAIL_TARGET',
             email:'monts@gmail.con'
@@ -44,8 +44,8 @@ export const ep = [
         },
         notified: false
       },
-      { level: 3, 
-        targets: [ 
+      { level: 3,
+        targets: [
           {
             type: 'SMS_TARGET',
             phoneNumber:'123456789'
@@ -88,7 +88,7 @@ export const ep = [
         notified: false
       },
       { level: 2,
-        targets: [ 
+        targets: [
           {
             type: 'SMS_TARGET',
             phoneNumber:'910123456'
@@ -100,7 +100,7 @@ export const ep = [
           {
             type: 'SMS_TARGET',
             phoneNumber:'910098765'
-          } 
+          }
         ],
         notified: false
       },
