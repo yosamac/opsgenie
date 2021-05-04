@@ -4,11 +4,6 @@ import { Transport, ClientProxyFactory } from '@nestjs/microservices';
 
 import { EP_SVC_CLIENT } from './ep.constant';
 import { EscalationPolicyService } from './ep.service';
-import {
-    FirstLevel,
-    SecondLevel,
-    LastLevel
-} from './policyLevel';
 
 const EscalationPolicyProvider = {
     provide: EP_SVC_CLIENT,
@@ -28,9 +23,6 @@ const EscalationPolicyProvider = {
     providers: [
         EscalationPolicyService,
         EscalationPolicyProvider,
-        FirstLevel,
-        SecondLevel,
-        LastLevel
     ],
     exports: [EscalationPolicyService]
 })
