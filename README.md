@@ -96,7 +96,7 @@ $ docker-compose up
 
 ## Roadmap
 - [x] Modeling
-- [-] Unit tests
+- [x] Unit tests
 
 
 ## License
