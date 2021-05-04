@@ -1,6 +1,7 @@
 
 import { ep } from './constants';
 
+
 export class MailServiceMock {
 
     sendEmail(data) {

@@ -13,8 +13,9 @@ import {
     MailServiceMock,
     SmsServiceMock,
     EPServiceMock,
-    TimesServiceMock
+    TimesServiceMock,
 } from '../mock/adapters.mock';
+
 
 import { TimesService } from '../../src/adapters/times';
 import { SmsService } from '../../src/adapters/sms';
@@ -30,8 +31,10 @@ export const envs = {
     TIMES_ACK_TIMEOUT: 15
 };
 
+
 describe('PagerService', () => {
     let pagerService: PagerService;
+
 
     beforeAll(async () => {
 
@@ -62,6 +65,7 @@ describe('PagerService', () => {
         const sendEmailSpy = jest.spyOn(MailServiceMock.prototype, 'sendEmail');
         const setTimesSpy = jest.spyOn(TimesServiceMock.prototype, 'setTimes');
         const updateOneSpy = jest.spyOn(DaoServiceMock.prototype, 'updateOne');
+
 
         const event = {
             eventType:'ALERT_MESSAGE',
