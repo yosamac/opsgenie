@@ -24,7 +24,7 @@ export const ep = [
         },
         notified: false
       },
-      { level: 2, 
+      { level: 2,
         targets: [ 
           {
             type: 'EMAIL_TARGET',

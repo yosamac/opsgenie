@@ -7,8 +7,6 @@ import {
 import {
     DaoServiceMock,
     validSvcId,
-    validPager,
-    anotherValidPager,
     anotherValidSvcId
 } from '../mock/dao.mock';
 import {
@@ -74,10 +72,10 @@ describe('PagerService', () => {
 
         afterEach(() => {
             getEPByMonitoredSvcSpy.mockRestore();
-            sendSmsSpy.mockRestore();
-            sendEmailSpy.mockRestore();
-            setTimesSpy.mockRestore();
             updateOneSpy.mockRestore();
+            sendSmsSpy.mockReset();
+            sendEmailSpy.mockReset();
+            setTimesSpy.mockReset();
         });
 
     /**
@@ -93,8 +91,8 @@ describe('PagerService', () => {
             const res = pagerService.handlerAlertMessage(event);
 
             res.then(res => {
-                expect(sendSmsSpy).toHaveBeenCalledTimes(2);
                 expect(sendEmailSpy).toHaveBeenCalledTimes(1);
+                expect(sendSmsSpy).toHaveBeenCalledTimes(2);
                 expect(setTimesSpy).toHaveBeenCalledWith(
                     envs.TIMES_ACK_TIMEOUT * 60 * 1000
                 );
@@ -111,7 +109,8 @@ describe('PagerService', () => {
          * and sets a 15-minutes acknowledgement delay.
         */
 
-        it('Should notify all targets of second level and set 15-minutes acknowledgement', (done) => {
+        it(`Should notify all targets of second level and set 15-minutes acknowledgement 
+            when receives the Acknowledged timeout`, (done) => {
 
             const ackTimeoutEvent = {
                 ...event,
@@ -122,8 +121,8 @@ describe('PagerService', () => {
             const res = pagerService.handlerAlertAckTimeout(ackTimeoutEvent);
 
             res.then(res => {
-                expect(sendSmsSpy).toHaveBeenCalledTimes(2);
                 expect(sendEmailSpy).toHaveBeenCalledTimes(1);
+                expect(sendSmsSpy).toHaveBeenCalledTimes(2);
                 expect(setTimesSpy).toHaveBeenCalledWith(
                     envs.TIMES_ACK_TIMEOUT * 60 * 1000
                 );
@@ -151,9 +150,7 @@ describe('PagerService', () => {
                 expect(sendEmailSpy).not.toHaveBeenCalled();
                 expect(setTimesSpy).not.toHaveBeenCalled();
                 done();
-            }).catch(err => {
-                console.log(err);
-            })
+            });
         });
 
         /**
@@ -202,18 +199,11 @@ describe('PagerService', () => {
 
             const res = pagerService.handlerServiceHealthy(alertEvent);
             res.then(res => {
-                expect(updateOneSpy).toHaveBeenCalledWith({
-                    svcId: 'anotherValidId',
-                    state: 'HEALTHY',
-                    levelNotified: anotherValidPager.levelNotified,
-                    events: anotherValidPager.events
-                });
                 expect(sendSmsSpy).not.toHaveBeenCalled();
                 expect(sendEmailSpy).not.toHaveBeenCalled();
                 expect(setTimesSpy).not.toHaveBeenCalled();
                 done();
             });
         });
-
     });
 });

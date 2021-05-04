@@ -108,7 +108,7 @@ export class PagerService {
             return;
         }
 
-        return this.escalationPolicySvc.getEPByMonitoredSvc(svc.svcId)
+        await this.escalationPolicySvc.getEPByMonitoredSvc(svc.svcId)
             .then(ep => {
                 policyLevels = ep.policyLevels;
                 const nextLevel = svc.levelNotified + 1;
