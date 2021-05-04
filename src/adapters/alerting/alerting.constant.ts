@@ -1,0 +1,1 @@
+export const ALERTING_SVC_CLIENT = Symbol('ALERTING_SVC_CLIENT');

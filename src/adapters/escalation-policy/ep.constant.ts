@@ -1,0 +1,1 @@
+export const EP_SVC_CLIENT = Symbol('EP_SVC_CLIENT');

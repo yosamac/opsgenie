@@ -1,0 +1,1 @@
+export const SMS_SVC_CLIENT = Symbol('SMS_SVC_CLIENT');

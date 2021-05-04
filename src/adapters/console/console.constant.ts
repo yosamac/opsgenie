@@ -1,0 +1,1 @@
+export const CONSOLE_SVC_CLIENT = Symbol('CONSOLE_SVC_CLIENT');

@@ -1,0 +1,18 @@
+export const Events = {
+  CONSOLE:{
+    ALERT_ACK:'ALERT_ACK',
+    ALERT_HEALTHY: 'ALERT_HEALTHY'
+  },
+  TIMES: {
+    ACK_TIMEOUT: 'ACK_TIMEOUT'
+  },
+  ALERTING: {
+    ALERT_MESSAGE: 'ALERT_MESSAGE',
+  },
+  MAIL:{
+    EMAIL_TARGET: 'EMAIL_TARGET'
+  },
+  SMS:{
+    SMS_TARGET: 'SMS_TARGET'
+  }
+};

@@ -21,12 +21,40 @@ $ cd opsgenie
 $ npm install
 ```
 
-## Usage
+### Usage
 
-### Run development mode
 ```shell
 npm start start:dev
 ```
+
+## API v1 info
+
+### Swagger
+
+
+Go to the the API to simulate event launching, can be used with the path: 
+[API V1](http://localhost:3000/api)
+
+
+## General configuration
+
+### Environment variables
+
+| Name                    | Description                                | Default                          |
+| ------------------------| ------------------------------------------ | ---------------------------------|
+| API_HOST                | API host                                   | `0.0.0.0`                        |
+| API_PORT                | API port                                   | `3000`                           |
+| ENDPOINT_ROUTE          | Global URL prefix                          | NO DEFAULT VALUE                 |
+| NODE_ENV                | Production or development mode             | `development`                    |
+| LOGGING_LEVEL           | Logs level                                 | `INFO`                           |
+| **Mesh section of other services**                                                                    |||
+| EP_MESH_HOST            | EP TCP host                                | `0.0.0.0`                        |
+| EP_MESH_PORT            | EP TCP port                                | `4001`                           |
+| **Database section**                                                                                  |||
+| MONGODB_URI             | Connection database                        | `mongodb://localhost/alert_pager`|
+
+
+## Running the tests
 
 ### Unit tests
 
@@ -34,10 +62,41 @@ npm start start:dev
 npm run test:unit
 ```
 
+### Integration tests
+
+```shell
+npm run test
+```
+
+## Built With
+
+* [NestJS](https://nestjs.com/) - The web framework used
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.org/yosama/opsgenie/tags).
+
+
+## Docker
+
+### Generate development Docker image
+```shell
+npm run build:dev-image
+```
+### Generate production Docker image
+```shell
+npm run build:pro-image
+```
+### Docker compose
+```shell
+docker-compose up opsgenie
+```
+
 ## Roadmap
 - [x] Modeling
-- [ ] Unit tests
+- [-] Unit tests
 
 
+## License
 
-
+[ISC](https://choosealicense.com/licenses/isc/)
